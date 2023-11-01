@@ -101,13 +101,15 @@ def Data(W0,M0,F,Mu,G,N,T):
          verticalalignment='bottom',fontsize=15)# fontdict=None, **kwargs)
 
 
-    plt.savefig(SaveDirName + "/T_%d"%(T) +
+    figname = (SaveDirName + "/T_%d"%(T) +
         "_W0_%0.1f_M0_%0.1f"%(W0,M0) +
         "_F_%0.2f"%(F) +
         "_Mu_" + f"{Mu:.{1}e}" +
         "_G_" + f"{G:.{1}e}" +
-        "_N_" + f"{N:.{1}e}" +
-        ".pdf",bbox_inches='tight',dpi=300)
+        "_N_" + f"{N:.{1}e}")
+
+    plt.savefig(figname+".pdf",bbox_inches='tight',dpi=300)
+    plt.savefig(figname+".png",bbox_inches='tight',dpi=300)
 
 ###############################################################################
 #Create Data
